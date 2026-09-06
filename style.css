@@ -498,3 +498,122 @@ color: var(--text-soft);
     transition: none;
     }
 }
+
+/* Styling Form Komentar */
+.comment-form {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin-bottom: 0.3rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-family: var(--font-body);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--sky);
+}
+
+/* Komentar Bentuk Awan (Cloud Bubble) */
+.comments-container h3 {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.cloud-bubble {
+  position: relative;
+  background: var(--surface);
+  border: 2px solid var(--sky-pale);
+  border-radius: 20px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.cloud-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+  width: 15px;
+  height: 15px;
+  background: var(--surface);
+  border-right: 2px solid var(--sky-pale);
+  border-bottom: 2px solid var(--sky-pale);
+  transform: rotate(45deg);
+}
+
+.comment-author {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--sky-ink);
+  margin-bottom: 0.2rem;
+}
+
+.comment-text {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin: 0;
+}
+
+/* Styling Spotify Favorite Tracks */
+.favorite-tracks-section {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  text-align: center; 
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.tracks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Membagi menjadi 2 kolom sama besar */
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Memastikan iframe Spotify menyesuaikan tema dan interaksi */
+.tracks-grid iframe {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.tracks-grid iframe:hover {
+  transform: scale(1.02); /* Sedikit membesar saat disentuh/di-hover */
+}
+
+/* Responsif: Berubah menjadi atas-bawah jika di layar HP */
+@media (max-width: 640px) {
+  .tracks-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -13,16 +13,65 @@
 <nav class="navbar">
     <a href="index.html" class="brand">Maitsa<span></span></a>
     <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="pengalaman.html">Experience</a></li>
     <li><a href="pendidikan.html">Education</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="comment.html">Comment</a></li>
-
+    <li><a href="comment.html" class="active">Comment</a></li>
     </ul>
     
     <input type="checkbox" id="theme-toggle" style="display: none;">
     <label for="theme-toggle" class="btn-ghost theme-toggle-btn" style="padding: 0.3rem 0.6rem; font-size: 1.2rem; cursor: pointer; border-radius: 8px; border: 1.5px solid var(--sky);"></label>
 </nav>
-</nav>
+
+<main class="content">
+    <p class="eyebrow">Tinggalkan Jejak ☁️</p>
+    <h1>Komentar & Pesan</h1>
+    <p class="lead">Tuliskan kesan, pesan, atau apa saja di sini!</p>
+
+    <div class="comment-section">
+        <form action="#" method="GET" class="comment-form" onsubmit="event.preventDefault(); alert('Fitur interaktif murni CSS/HTML: Komentar Anda tersimpan secara lokal di halaman ini!');">
+            <div class="form-group">
+                <label for="nama">Nama</label>
+                <input type="text" id="nama" placeholder="Nama kamu..." required>
+            </div>
+            <div class="form-group">
+                <label for="pesan">Pesan</label>
+                <textarea id="pesan" rows="3" placeholder="Tulis komentar atau pesan..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Kirim Komentar</button>
+        </form>
+
+        <div class="comments-container">
+            <h3>Komentar Masuk</h3>
+            
+            <div class="cloud-bubble">
+                <p class="comment-author"></p>
+                <p class="comment-text"></p>
+            </div>
+
+            <div class="cloud-bubble">
+                <p class="comment-author"></p>
+                <p class="comment-text"></p>
+            </div>
+        </div>
+    </div>
+
+  <!-- Bagian Rekomendasi Lagu (Sesuai Referensi Gambar) -->
+    <div class="favorite-tracks-section">
+        <p class="section-subtitle">MY FAVORITE TRACKS</p>
+        <div class="tracks-grid">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1fDFHXcykq4Q8SUUexvO47?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3sW3oSbzI3v61kXgBnc10y?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+
+</main>
+
+<footer>© MRF 2026</footer>
+
+</div>
+
+</body>
+</html>
