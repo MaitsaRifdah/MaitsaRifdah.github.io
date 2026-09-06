@@ -303,19 +303,18 @@ color: var(--text-soft);
 font-size: 1.02rem;
 }
 
-/* Styling Grid untuk Halaman Pengalaman */
+
 .experience-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Membagi menjadi 2 kolom sama besar */
-  gap: 1.5rem; /* Jarak antar kotak */
+  grid-template-columns: 1fr 1fr; 
+  gap: 1.5rem; 
   margin-top: 2.5rem;
 }
 
-/* Penyesuaian kotak empty-state di dalam grid */
 .experience-grid .empty-state {
-  margin-top: 0; /* Menghapus margin atas bawaan agar rapi */
-  padding: 1.5rem; /* Mengurangi sedikit padding agar teks tidak terlalu renggang */
-  height: 100%; /* Membuat tinggi kotak sejajar satu sama lain */
+  margin-top: 0; 
+  padding: 1.5rem; 
+  height: 100%; 
   display: flex;
   flex-direction: column;
 }
@@ -327,10 +326,9 @@ font-size: 1.02rem;
 
 .experience-grid .empty-state p {
   margin-bottom: 0;
-  font-size: 0.9rem; /* Mengecilkan teks sedikit agar muat di kotak yang lebih kecil */
+  font-size: 0.9rem; 
 }
 
-/* Responsif: Jika dibuka di HP, kotaknya kembali susun 1 ke bawah */
 @media (max-width: 640px) {
   .experience-grid {
     grid-template-columns: 1fr;
@@ -503,7 +501,6 @@ color: var(--text-soft);
     }
 }
 
-/* Styling Form Komentar */
 .comment-form {
   background: var(--surface);
   padding: 1.5rem;
@@ -540,7 +537,6 @@ color: var(--text-soft);
   border-color: var(--sky);
 }
 
-/* Komentar Bentuk Awan (Cloud Bubble) */
 .comments-container h3 {
   font-size: 1.15rem;
   margin-bottom: 1rem;
@@ -582,43 +578,42 @@ color: var(--text-soft);
   margin: 0;
 }
 
-/* Wadah agar gambar selalu berdampingan */
 .image-row {
   display: flex;
   justify-content: center;
-  gap: 1.5rem; /* Jarak antara foto kiri dan kanan */
+  gap: 1.5rem; 
   margin-top: 1rem;
 }
 
-/* Styling teks judul MY FAVORITE TRACKS */
+
 .section-subtitle {
-  font-family: var(--font-body); /* Menggunakan font bawan yang bersih */
-  font-size: 0.75rem;            /* Ukuran teks kecil */
-  font-weight: 600;              /* Ketebalan teks */
-  letter-spacing: 0.2em;         /* Memberikan jarak renggang antar huruf */
-  color: var(--text-soft);       /* Warna agak pudar/abu-abu lembut */
-  text-transform: uppercase;     /* Memaksa semua huruf menjadi kapital */
-  text-align: center;            /* Memposisikan teks di tengah */
-  margin-bottom: 1.5rem;         /* Jarak ke bawah sebelum foto lagu */
+  font-family: var(--font-body); 
+  font-size: 0.75rem;            
+  font-weight: 600;              
+  letter-spacing: 0.2em;         
+  color: var(--text-soft);       
+  text-transform: uppercase;     
+  text-align: center;            
+  margin-bottom: 1.5rem;         
 }
-/* Styling untuk gambar rekomendasi lagu langsung */
+
 .track-image {
   width: 80%;
   height: auto;
-  border-radius: 12px; /* Membuat sudut gambar melengkung */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Memberikan sedikit bayangan */
+  border-radius: 12px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
   object-fit: cover;
   transition: transform 0.2s ease;
 }
 
 .track-image:hover {
-  transform: scale(1.02); /* Sedikit membesar saat disentuh/kursor diarahkan */
-}
-/* Wadah grid atau baris tempat foto lagu diletakkan */
+  transform: scale(1.02); 
+
 .tracks-grid, 
 .image-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem; /* Atur angka ini untuk memperbesar atau memperkecil jarak antar lagu */
+  gap: 2rem; 
   align-items: center;
+}
 }
