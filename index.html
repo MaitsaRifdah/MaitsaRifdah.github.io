@@ -1,13 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewpoint content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <h1>Selamat Datang di Website pribadi saya</h1>
-        <h2>Perkenalkan nama saya maitsa</h2>
-    </body>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Home</title>
+</head>
+<body>
 
+<div class="page">
+
+<nav class="navbar">
+    <a href="index.html" class="brand">Maitsa<span></span></a>
+    <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About me</a></li>
+    <li><a href="pengalaman.html">Experience</a></li>
+    <li><a href="pendidikan.html">Education</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+    <input type="checkbox" id="theme-toggle" style="display: none;">
+    <label for="theme-toggle" class="btn-ghost theme-toggle-btn" style="padding: 0.3rem 0.6rem; font-size: 1.2rem; cursor: pointer; border-radius: 8px; border: 1.5px solid var(--sky);"></label>
+</nav>
+</nav>
+
+<main class="content">
+    <section class="hero">
+        <div class="hero-left">
+        <div class="avatar-wrap">
+        <div class="avatar-blob"></div>
+        <div class="avatar-circle">
+        <span> <img src="fotolagi.jpeg" alt="Foto Maitsa"</span>
+        </div>
+        </div>
+        <br> 
+        <h1 class="nama-bawah">Maitsa Rifdah Fadhilah</h1>
+    </div>
+
+    <div class="hero-text">
+        <p class="hero-greeting">Halo, saya</p>
+        <p class="hero-role">Mahasiswa Teknik Komputer, Universitas Negeri Makassar</p>
+        <p>
+        Saya mahasiswa aktif Universitas Negeri Makassar (UNM),
+        mengambil Program Studi Teknik Komputer, Jurusan Teknik Informatika
+        dan Komputer. 
+        </p>
+        <div class="hero-actions">
+        <a href="pengalaman.html" class="btn btn-primary">Lihat pengalaman</a>
+        <a href="contact.html" class="btn btn-ghost">Hubungi saya</a>
+        </div>
+    </div>
+
+
+    </section>
+</main>
+
+<footer>© MRF 2026 </footer>
+
+</div>
+
+</body>
 </html>
