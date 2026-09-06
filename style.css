@@ -303,34 +303,54 @@ color: var(--text-soft);
 font-size: 1.02rem;
 }
 
-.facts {
-margin-top: 2.2rem;
-border-top: 1px solid var(--line);
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 Kolom */
+  gap: 1.5rem; /* Jarak antar kotak */
+  margin-top: 2.5rem;
+  
+  /* BARU: Membatasi lebar dan memusatkan grid */
+  max-width: 700px; /* Atur angka ini (misal 600px atau 800px) sesuai selera kecil/besarnya */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.facts dl {
-display: grid;
-grid-template-columns: 1fr;
-margin: 0;
+/* Penyesuaian kotak di dalam grid agar lebih kecil/pipih */
+.experience-grid .empty-state {
+  margin-top: 0;
+  
+  /* BARU: Padding dikurangi agar kotak lebih pipih */
+  padding: 1.5rem 1rem; 
+  
+  /* BARU: Memusatkan teks di tengah kotak */
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+  
+  height: auto; /* Membiarkan tinggi menyesuaikan konten */
+  min-height: 100px; /* Memberikan tinggi minimal agar seragam */
 }
 
-.fact-row {
-display: grid;
-grid-template-columns: 140px 1fr;
-gap: 1rem;
-padding: 1rem 0;
-border-bottom: 1px solid var(--line);
+.experience-grid .empty-state h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  /* Opsional: Membuat font lebih tebal seperti di gambar */
+  font-weight: 600; 
 }
 
-.fact-row dt {
-color: var(--text-soft);
-font-size: 0.9rem;
+/* Jika kamu memutuskan HANYA menampilkan judul dan menyembunyikan paragrafnya 
+   (seperti pada gambar referensimu) */
+.experience-grid .empty-state p {
+  display: none; 
 }
 
-.fact-row dd {
-margin: 0;
-font-weight: 500;
-color: var(--text-main);
+/* Responsif untuk HP */
+@media (max-width: 640px) {
+  .experience-grid {
+    grid-template-columns: 1fr; /* Jadi 1 kolom di HP */
+    max-width: 100%; /* Lebar penuh di HP */
+  }
 }
 
 .contact-list {
