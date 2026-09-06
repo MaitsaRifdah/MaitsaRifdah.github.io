@@ -303,53 +303,37 @@ color: var(--text-soft);
 font-size: 1.02rem;
 }
 
+/* Styling Grid untuk Halaman Pengalaman */
 .experience-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 Kolom */
+  grid-template-columns: 1fr 1fr; /* Membagi menjadi 2 kolom sama besar */
   gap: 1.5rem; /* Jarak antar kotak */
   margin-top: 2.5rem;
-  
-  /* BARU: Membatasi lebar dan memusatkan grid */
-  max-width: 700px; /* Atur angka ini (misal 600px atau 800px) sesuai selera kecil/besarnya */
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* Penyesuaian kotak di dalam grid agar lebih kecil/pipih */
+/* Penyesuaian kotak empty-state di dalam grid */
 .experience-grid .empty-state {
-  margin-top: 0;
-  
-  /* BARU: Padding dikurangi agar kotak lebih pipih */
-  padding: 1.5rem 1rem; 
-  
-  /* BARU: Memusatkan teks di tengah kotak */
+  margin-top: 0; /* Menghapus margin atas bawaan agar rapi */
+  padding: 1.5rem; /* Mengurangi sedikit padding agar teks tidak terlalu renggang */
+  height: 100%; /* Membuat tinggi kotak sejajar satu sama lain */
   display: flex;
-  align-items: center; 
-  justify-content: center;
-  text-align: center;
-  
-  height: auto; /* Membiarkan tinggi menyesuaikan konten */
-  min-height: 100px; /* Memberikan tinggi minimal agar seragam */
+  flex-direction: column;
 }
 
 .experience-grid .empty-state h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  /* Opsional: Membuat font lebih tebal seperti di gambar */
-  font-weight: 600; 
+  margin-top: 0;
+  font-size: 1.1rem;
 }
 
-/* Jika kamu memutuskan HANYA menampilkan judul dan menyembunyikan paragrafnya 
-   (seperti pada gambar referensimu) */
 .experience-grid .empty-state p {
-  display: none; 
+  margin-bottom: 0;
+  font-size: 0.9rem; /* Mengecilkan teks sedikit agar muat di kotak yang lebih kecil */
 }
 
-/* Responsif untuk HP */
+/* Responsif: Jika dibuka di HP, kotaknya kembali susun 1 ke bawah */
 @media (max-width: 640px) {
   .experience-grid {
-    grid-template-columns: 1fr; /* Jadi 1 kolom di HP */
-    max-width: 100%; /* Lebar penuh di HP */
+    grid-template-columns: 1fr;
   }
 }
 
@@ -598,42 +582,43 @@ color: var(--text-soft);
   margin: 0;
 }
 
-/* Styling Spotify Favorite Tracks */
-.favorite-tracks-section {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-  text-align: center; 
+/* Wadah agar gambar selalu berdampingan */
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Jarak antara foto kiri dan kanan */
+  margin-top: 1rem;
 }
 
+/* Styling teks judul MY FAVORITE TRACKS */
 .section-subtitle {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  color: var(--text-soft);
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  font-family: var(--font-body); /* Menggunakan font bawan yang bersih */
+  font-size: 0.75rem;            /* Ukuran teks kecil */
+  font-weight: 600;              /* Ketebalan teks */
+  letter-spacing: 0.2em;         /* Memberikan jarak renggang antar huruf */
+  color: var(--text-soft);       /* Warna agak pudar/abu-abu lembut */
+  text-transform: uppercase;     /* Memaksa semua huruf menjadi kapital */
+  text-align: center;            /* Memposisikan teks di tengah */
+  margin-bottom: 1.5rem;         /* Jarak ke bawah sebelum foto lagu */
 }
-
-.tracks-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Membagi menjadi 2 kolom sama besar */
-  gap: 1.5rem;
-  align-items: center;
-}
-
-/* Memastikan iframe Spotify menyesuaikan tema dan interaksi */
-.tracks-grid iframe {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Styling untuk gambar rekomendasi lagu langsung */
+.track-image {
+  width: 80%;
+  height: auto;
+  border-radius: 12px; /* Membuat sudut gambar melengkung */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Memberikan sedikit bayangan */
+  object-fit: cover;
   transition: transform 0.2s ease;
 }
 
-.tracks-grid iframe:hover {
-  transform: scale(1.02); /* Sedikit membesar saat disentuh/di-hover */
+.track-image:hover {
+  transform: scale(1.02); /* Sedikit membesar saat disentuh/kursor diarahkan */
 }
-
-/* Responsif: Berubah menjadi atas-bawah jika di layar HP */
-@media (max-width: 640px) {
-  .tracks-grid {
-    grid-template-columns: 1fr;
-  }
+/* Wadah grid atau baris tempat foto lagu diletakkan */
+.tracks-grid, 
+.image-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem; /* Atur angka ini untuk memperbesar atau memperkecil jarak antar lagu */
+  align-items: center;
 }
