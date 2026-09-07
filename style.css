@@ -598,7 +598,7 @@ color: var(--text-soft);
 }
 
 .track-image {
-  width: 80%;
+  width: 85%;
   height: auto;
   border-radius: 12px; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
@@ -608,7 +608,7 @@ color: var(--text-soft);
 
 .track-image:hover {
   transform: scale(1.02); 
-
+}
 .tracks-grid, 
 .image-row {
   display: grid;
@@ -616,4 +616,4 @@ color: var(--text-soft);
   gap: 2rem; 
   align-items: center;
 }
-}
+
