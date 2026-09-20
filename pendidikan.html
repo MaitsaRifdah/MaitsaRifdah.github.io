@@ -20,13 +20,10 @@
     <li><a href="pendidikan.html" class="active">Education</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="comment.html">Comment</a></li>
-
     </ul>
-    <input type="checkbox" id="theme-toggle" style="display: none;">
-    <label for="theme-toggle" class="btn-ghost theme-toggle-btn" style="padding: 0.3rem 0.6rem; font-size: 1.2rem; cursor: pointer; border-radius: 8px; border: 1.5px solid var(--sky);"></label>
+    <button id="theme-toggle" class="btn-ghost" style="padding: 0.3rem 0.6rem; font-size: 1.2rem; cursor: pointer; border-radius: 8px; border: 1.5px solid var(--sky); background: transparent;">🌙</button>
 </nav>
-</nav>
-</nav>
+
 
     <main class="content">
     <p class="eyebrow">Riwayat</p>
@@ -39,7 +36,8 @@
         <p class="school-sub">Makassar, Indonesia</p>
     </li>
     <li>
-        <p class="school">Mori no Sato Elementary School</p>
+        <p class="school">森野 小学校 <br>
+            (Mori no Sato Elementary School) </p>
         <p class="school-sub">Kanazawa, Jepang</p>
     </li>
     <li>
@@ -75,6 +73,28 @@
 <footer>© 2026 MRF</footer>
 
 </div>
-
+<script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const rootElement = document.documentElement;
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (currentTheme === 'light') {
+        rootElement.setAttribute('data-theme', 'light');
+        toggleButton.textContent = '☀️'; 
+    }
+    toggleButton.addEventListener('click', () => {
+        let theme = rootElement.getAttribute('data-theme');
+        
+        if (theme === 'light') {
+            rootElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'dark');
+            toggleButton.textContent = '🌙';
+        } else {
+            rootElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            toggleButton.textContent = '☀️';
+        }
+    });
+</script>
 </body>
 </html>

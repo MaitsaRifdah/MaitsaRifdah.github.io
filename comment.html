@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<title>Comment</title>
-</head>
-<body>
+    <html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="style.css">
+        <title>Comment</title>
+    </head>
+    <body>
 
 <div class="page">
 
@@ -20,10 +20,9 @@
     <li><a href="contact.html">Contact</a></li>
     <li><a href="comment.html" class="active">Comment</a></li>
     </ul>
+    <button id="theme-toggle" class="btn-ghost" style="padding: 0.3rem 0.6rem; font-size: 1.2rem; cursor: pointer; border-radius: 8px; border: 1.5px solid var(--sky); background: transparent;">🌙</button>
+    </nav>
     
-    <input type="checkbox" id="theme-toggle" style="display: none;">
-    <label for="theme-toggle" class="btn-ghost theme-toggle-btn" style="padding: 0.3rem 0.6rem; font-size: 1.2rem; cursor: pointer; border-radius: 8px; border: 1.5px solid var(--sky);"></label>
-</nav>
 
 <main class="content">
     <p class="eyebrow">Tinggalkan Jejak ☁️</p>
@@ -52,10 +51,30 @@
         </div>
     </div>
 </main>
-
-<footer>© 2026 MRF</footer>
-
-</div>
-
-</body>
+            <footer>© 2026 MRF</footer>
+        </div>
+<script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const rootElement = document.documentElement;
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (currentTheme === 'light') {
+        rootElement.setAttribute('data-theme', 'light');
+        toggleButton.textContent = '☀️'; // Ubah ikon ke bulan
+    }
+    toggleButton.addEventListener('click', () => {
+        let theme = rootElement.getAttribute('data-theme');
+        
+        if (theme === 'light') {
+            rootElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'dark');
+            toggleButton.textContent = '🌙';
+        } else {
+            rootElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            toggleButton.textContent = '☀️';
+        }
+    });
+</script>
+    </body>
 </html>

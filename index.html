@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 <title>Home</title>
+
 </head>
 <body>
-
 <div class="page">
+
+<div class="absurd-wrapper">
+    <div class="absurd-item a1"> .✦ ݁˖</div>
+</div>
 
 <nav class="navbar">
     <a href="index.html" class="brand">Maitsa<span></span></a>
@@ -19,11 +24,8 @@
     <li><a href="pendidikan.html">Education</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="comment.html">Comment</a></li>
-
     </ul>
-    
-    <input type="checkbox" id="theme-toggle" style="display: none;">
-    <label for="theme-toggle" class="btn-ghost theme-toggle-btn" style="padding: 0.3rem 0.6rem; font-size: 1.2rem; cursor: pointer; border-radius: 8px; border: 1.5px solid var(--sky);"></label>
+        <button id="theme-toggle" class="btn-ghost" style="padding: 0.3rem 0.6rem; font-size: 1.2rem; cursor: pointer; border-radius: 8px; border: 1.5px solid var(--sky); background: transparent;">🌙</button>
 </nav>
 </nav>
 
@@ -33,7 +35,7 @@
         <div class="avatar-wrap">
         <div class="avatar-blob"></div>
         <div class="avatar-circle">
-        <span> <img src="fotolagi.jpeg" alt="Foto Maitsa"</span>
+        <span> <img src="fotolagi.jpeg" alt="Foto Maitsa"></span>
         </div>
         </div>
         <br> 
@@ -41,7 +43,8 @@
     </div>
 
     <div class="hero-text">
-        <p class="hero-greeting">Halo, I'm</p>
+        <p class="hero-greeting">
+            <span id="typing-text"></span><span class="cursor"></span></p>
         <p class="hero-role">Mahasiswa Teknik Komputer, Universitas Negeri Makassar</p>
         <p>
         Saya mahasiswa aktif Universitas Negeri Makassar (UNM),
@@ -53,14 +56,64 @@
         <a href="contact.html" class="btn btn-ghost">Hubungi saya</a>
         </div>
     </div>
-
-
     </section>
 </main>
 
 <footer>© 2026 MRF </footer>
 
 </div>
+<script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const rootElement = document.documentElement;
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (currentTheme === 'light') {
+        rootElement.setAttribute('data-theme', 'light');
+        toggleButton.textContent = '☀️'; 
+    }
+    toggleButton.addEventListener('click', () => {
+        let theme = rootElement.getAttribute('data-theme');
+        
+        if (theme === 'light') {
+            rootElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'dark');
+            toggleButton.textContent = '🌙';
+        } else {
+            rootElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            toggleButton.textContent = '☀️';
+        }
+    });
+</script>
+<script>
+    const textTarget = document.getElementById("typing-text");
+    const words = ["Hi, I'm"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
+    function typeEffect() {
+        const currentWord = words[wordIndex];
+        if (isDeleting) {
+            textTarget.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            textTarget.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        let typingSpeed = 150; 
+        if (!isDeleting && charIndex === currentWord.length) {
+            typingSpeed = 2000; 
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            typingSpeed = 500;
+        }
+        setTimeout(typeEffect, typingSpeed);
+    }
+    document.addEventListener("DOMContentLoaded", typeEffect);
+</script>
 </body>
 </html>
